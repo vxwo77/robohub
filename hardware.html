@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hardware DB - RoboHub</title>
+
+  <!-- EXTERNAL CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- INTERNAL CSS -->
+  <style>
+    .filter-bar {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 35px;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+      text-transform: uppercase;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background-color: var(--primary);
+      color: var(--dark);
+      border-color: var(--primary);
+    }
+
+    .hw-card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all 0.3s;
+    }
+
+    .hw-card:hover {
+      border-color: var(--primary);
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+
+    .hw-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 0;
+    }
+
+    .hw-card-body {
+      padding: 20px;
+    }
+
+    .hw-card-body h3 {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      color: var(--primary);
+      letter-spacing: 1px;
+      margin-bottom: 8px;
+    }
+
+    .hw-card-body p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      margin-bottom: 12px;
+    }
+
+    .hw-specs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">Robo<span>Hub</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hardware.html" class="active">Hardware DB</a></li>
+        <li><a href="sensors.html">Sensors</a></li>
+        <li><a href="tutorials.html">Tutorials</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="team.html">Team</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>Hardware <span style="color: var(--secondary);">Encyclopedia</span></h1>
+    <p>Explore microcontrollers and development boards for your next project</p>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="section">
+
+    <!-- Filter Buttons -->
+    <div class="filter-bar">
+      <button class="filter-btn active">All</button>
+      <button class="filter-btn">Arduino</button>
+      <button class="filter-btn">ESP</button>
+      <button class="filter-btn">Raspberry Pi</button>
+    </div>
+
+    <!-- Cards Grid -->
+    <div class="cards-grid">
+
+      <div class="hw-card">
+        <img src="https://images.unsplash.com/photo-1553406830-ef2513450d76?w=500&q=80" alt="Arduino Uno" />
+        <div class="hw-card-body">
+          <h3>Arduino Uno R3</h3>
+          <p>The most popular beginner board. Great for learning digital and analog I/O.</p>
+          <div class="hw-specs">
+            <span class="badge badge-green">Beginner</span>
+            <span class="badge badge-blue">5V</span>
+            <span class="badge badge-blue">16 MHz</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hw-card">
+        <img src="https://www.voltaat.com/cdn/shop/files/voltaat-deveb-esp-doit-esp32-devkit-v1-development-board-wi-fi-bluetooth-usb-micro-b-1221490851.jpg?v=1771425788" alt="ESP32" />
+        <div class="hw-card-body">
+          <h3>ESP32 DevKit</h3>
+          <p>Dual-core processor with built-in WiFi and Bluetooth. Perfect for IoT.</p>
+          <div class="hw-specs">
+            <span class="badge badge-blue">Intermediate</span>
+            <span class="badge badge-blue">3.3V</span>
+            <span class="badge badge-orange">WiFi+BT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hw-card">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=500&q=80" alt="Raspberry Pi" />
+        <div class="hw-card-body">
+          <h3>Raspberry Pi 4</h3>
+          <p>A full Linux computer on a board. Ideal for AI and computer vision projects.</p>
+          <div class="hw-specs">
+            <span class="badge badge-orange">Advanced</span>
+            <span class="badge badge-blue">5V</span>
+            <span class="badge badge-orange">Linux</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hw-card">
+        <img src="https://images.unsplash.com/photo-1629904853893-c2c8981a1dc5?w=500&q=80" alt="Arduino Nano" />
+        <div class="hw-card-body">
+          <h3>Arduino Nano</h3>
+          <p>Compact version of the Uno. Great when space is limited in your project.</p>
+          <div class="hw-specs">
+            <span class="badge badge-green">Beginner</span>
+            <span class="badge badge-blue">5V</span>
+            <span class="badge badge-blue">Compact</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hw-card">
+        <img src="https://images.unsplash.com/photo-1601132359864-c974e79890ac?w=500&q=80" alt="ESP8266" />
+        <div class="hw-card-body">
+          <h3>ESP8266 NodeMCU</h3>
+          <p>Budget-friendly WiFi-enabled board. Great starting point for IoT projects.</p>
+          <div class="hw-specs">
+            <span class="badge badge-green">Beginner</span>
+            <span class="badge badge-blue">3.3V</span>
+            <span class="badge badge-orange">WiFi</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hw-card">
+        <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?w=500&q=80" alt="Raspberry Pi Pico" />
+        <div class="hw-card-body">
+          <h3>Raspberry Pi Pico</h3>
+          <p>Affordable microcontroller using the RP2040 chip. Programmable in MicroPython.</p>
+          <div class="hw-specs">
+            <span class="badge badge-blue">Intermediate</span>
+            <span class="badge badge-blue">3.3V</span>
+            <span class="badge badge-green">MicroPython</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Comparison Table -->
+    <h2 class="section-title" style="margin-top: 60px;">Quick <span>Comparison</span></h2>
+    <div class="section-line"></div>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Board</th>
+            <th>CPU Speed</th>
+            <th>RAM</th>
+            <th>WiFi</th>
+            <th>Voltage</th>
+            <th>Language</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Arduino Uno R3</td>
+            <td>16 MHz</td>
+            <td>2 KB</td>
+            <td>❌</td>
+            <td>5V</td>
+            <td>C/C++</td>
+          </tr>
+          <tr>
+            <td>ESP32</td>
+            <td>240 MHz</td>
+            <td>520 KB</td>
+            <td>✅</td>
+            <td>3.3V</td>
+            <td>C/C++, MicroPython</td>
+          </tr>
+          <tr>
+            <td>Raspberry Pi 4</td>
+            <td>1.5 GHz</td>
+            <td>4 GB</td>
+            <td>✅</td>
+            <td>5V</td>
+            <td>Python, C, Java...</td>
+          </tr>
+          <tr>
+            <td>Arduino Nano</td>
+            <td>16 MHz</td>
+            <td>2 KB</td>
+            <td>❌</td>
+            <td>5V</td>
+            <td>C/C++</td>
+          </tr>
+          <tr>
+            <td>ESP8266</td>
+            <td>80 MHz</td>
+            <td>80 KB</td>
+            <td>✅</td>
+            <td>3.3V</td>
+            <td>C/C++, MicroPython</td>
+          </tr>
+          <tr>
+            <td>Raspberry Pi Pico</td>
+            <td>133 MHz</td>
+            <td>264 KB</td>
+            <td>❌</td>
+            <td>3.3V</td>
+            <td>MicroPython, C</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Info Box (inline CSS example) -->
+    <div class="info-box" style="margin-top: 30px;">
+      <p>💡 <strong style="color: var(--primary);">Tip:</strong> Not sure which board to pick? Use our <a href="contact.html">consultation form</a> and describe your project — we'll recommend the best fit for you.</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 <span>RoboHub</span> — Robotics & IoT Consulting Platform</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

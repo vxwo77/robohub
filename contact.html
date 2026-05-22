@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - RoboHub</title>
+
+  <!-- EXTERNAL CSS -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- INTERNAL CSS -->
+  <style>
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 50px;
+      align-items: start;
+    }
+
+    .contact-info h2 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--primary);
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+
+    .contact-item-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-item-text strong {
+      display: block;
+      color: var(--text);
+      font-size: 0.95rem;
+      margin-bottom: 3px;
+    }
+
+    .contact-item-text span {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .checkbox-group {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .radio-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .radio-label input[type="radio"] {
+      accent-color: var(--primary);
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .checkbox-group {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-container">
+      <div class="nav-logo">Robo<span>Hub</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hardware.html">Hardware DB</a></li>
+        <li><a href="sensors.html">Sensors</a></li>
+        <li><a href="tutorials.html">Tutorials</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="team.html">Team</a></li>
+      </ul>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <h1>Request a <span style="color: var(--secondary);">Consultation</span></h1>
+    <p>Fill in your project details and we'll get back to you with guidance</p>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="section">
+    <div class="contact-layout">
+
+      <!-- LEFT: Contact Info -->
+      <div class="contact-info">
+        <h2>Get In Touch</h2>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">📧</div>
+          <div class="contact-item-text">
+            <strong>Email</strong>
+            <span>contact@robohub.edu</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-text">
+            <strong>Location</strong>
+            <span>College of Computer Science & IT</span>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="contact-item-icon">⏰</div>
+          <div class="contact-item-text">
+            <strong>Response Time</strong>
+            <span>Usually within 24 hours</span>
+          </div>
+        </div>
+
+        <!-- INLINE CSS example -->
+        <div style="margin-top: 30px; padding: 20px; background-color: var(--card-bg); border: 1px solid var(--border); border-radius: var(--radius);">
+          <p style="font-family: var(--font-heading); font-size: 0.8rem; color: var(--primary); letter-spacing: 1px; margin-bottom: 10px; text-transform: uppercase;">What We Can Help With</p>
+          <ul class="feature-list">
+            <li>Choosing the right microcontroller</li>
+            <li>Sensor selection and wiring</li>
+            <li>Programming advice (Arduino IDE, MicroPython)</li>
+            <li>Troubleshooting hardware issues</li>
+            <li>Project planning and component lists</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="form-container">
+        <form id="contactForm" novalidate>
+
+          <!-- Name + Email Row -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="e.g. Ahmed Al-Otaibi"
+                pattern="[A-Za-z\u0600-\u06FF ]{2,50}"
+              />
+              <span class="error-msg" id="nameError">Please enter your full name.</span>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="e.g. ahmed@example.com"
+              />
+              <span class="error-msg" id="emailError">Please enter a valid email address.</span>
+            </div>
+          </div>
+
+          <!-- Phone -->
+          <div class="form-group">
+            <label for="phone">Phone Number (optional)</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="e.g. 0501234567"
+              pattern="[0-9]{9,15}"
+            />
+            <span class="error-msg" id="phoneError">Phone must be 9–15 digits only.</span>
+          </div>
+
+          <!-- Project Type -->
+          <div class="form-group">
+            <label for="projectType">Project Type *</label>
+            <select id="projectType" name="projectType">
+              <option value="">-- Select project type --</option>
+              <option value="arduino">Arduino Project</option>
+              <option value="esp32">ESP32 / IoT Project</option>
+              <option value="raspberry">Raspberry Pi Project</option>
+              <option value="robot">Robotics / Autonomous</option>
+              <option value="other">Other</option>
+            </select>
+            <span class="error-msg" id="projectTypeError">Please select a project type.</span>
+          </div>
+
+          <!-- Components Needed (checkboxes) -->
+          <div class="form-group">
+            <label>Components of Interest</label>
+            <div class="checkbox-group">
+              <label class="checkbox-label">
+                <input type="checkbox" name="components" value="sensors" /> Sensors
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="components" value="motors" /> Motors
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="components" value="displays" /> Displays
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="components" value="wireless" /> Wireless Modules
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="components" value="power" /> Power Supply
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="components" value="other" /> Other
+              </label>
+            </div>
+          </div>
+
+          <!-- Experience Level (radios) -->
+          <div class="form-group">
+            <label>Your Experience Level</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="level" value="beginner" checked /> Beginner
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="level" value="intermediate" /> Intermediate
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="level" value="advanced" /> Advanced
+              </label>
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div class="form-group">
+            <label for="message">Describe Your Project *</label>
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Describe your project idea, what you want it to do, and any specific questions you have..."
+            ></textarea>
+            <span class="error-msg" id="messageError">Please describe your project (at least 10 characters).</span>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1rem; padding: 14px;">
+            Send Consultation Request
+          </button>
+
+          <div class="success-msg" id="successMsg">
+            ✅ Your request has been sent! We'll get back to you within 24 hours.
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2024 <span>RoboHub</span> — Robotics & IoT Consulting Platform</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

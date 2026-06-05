@@ -1,107 +1,78 @@
 // ===== MAIN JS FILE =====
 
-// --- Hamburger Menu ---
+// 1- قائمة النافبار للجوال (الهمبرجر)
 function initNav() {
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('navLinks');
+  var hamburger = document.getElementById('hamburger');
+  var navLinks = document.getElementById('navLinks');
   if (hamburger && navLinks) {
-    hamburger.addEventListener('click', function () {
-      navLinks.classList.toggle('open');
-    });
+    hamburger.onclick = function () {
+      if (navLinks.className === "nav-links") {
+        navLinks.className += " open";
+      } else {
+        navLinks.className = "nav-links";
+      }
+    };
   }
-
-  // Highlight active page link
-  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  const links = document.querySelectorAll('.nav-links a');
-  links.forEach(function (link) {
-    if (link.getAttribute('href') === currentPage) {
-      link.classList.add('active');
-    }
-  });
 }
 
-// --- Contact Form Validation ---
+// 2- التحقق من فورم التواصل
 function initContactForm() {
-  const form = document.getElementById('contactForm');
+  var form = document.getElementById('contactForm');
   if (!form) return;
 
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-    let valid = true;
+  form.onsubmit = function (e) {
+    e.preventDefault(); // إيقاف الإرسال التلقائي
+    var valid = true;
 
-    // Clear previous errors
-    document.querySelectorAll('.error-msg').forEach(function (el) {
-      el.style.display = 'none';
-    });
+    // إخفاء رسائل الخطأ السابقة
+    document.getElementById('nameError').style.display = 'none';
+    document.getElementById('emailError').style.display = 'none';
+    document.getElementById('messageError').style.display = 'none';
 
-    // Name validation
-    const name = document.getElementById('name');
-    if (!name.value.trim()) {
+    // التحقق من الاسم
+    var name = document.getElementById('name').value;
+    if (name.trim() === "") {
       document.getElementById('nameError').style.display = 'block';
       valid = false;
     }
 
-    // Email validation
-    const email = document.getElementById('email');
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email.value)) {
+    // التحقق من الإيميل بطريقة بدائية واضحة (وجود @ و نقطة)
+    var email = document.getElementById('email').value;
+    if (email.indexOf('@') === -1 || email.indexOf('.') === -1) {
       document.getElementById('emailError').style.display = 'block';
       valid = false;
     }
 
-    // Phone validation (optional but if filled must be digits)
-    const phone = document.getElementById('phone');
-    if (phone && phone.value.trim() !== '') {
-      const phonePattern = /^[0-9]{9,15}$/;
-      if (!phonePattern.test(phone.value.trim())) {
-        document.getElementById('phoneError').style.display = 'block';
-        valid = false;
-      }
-    }
-
-    // Project type
-    const projectType = document.getElementById('projectType');
-    if (projectType && projectType.value === '') {
-      document.getElementById('projectTypeError').style.display = 'block';
-      valid = false;
-    }
-
-    // Message
-    const message = document.getElementById('message');
-    if (!message.value.trim() || message.value.trim().length < 10) {
+    // التحقق من الرسالة
+    var message = document.getElementById('message').value;
+    if (message.trim().length < 10) {
       document.getElementById('messageError').style.display = 'block';
       valid = false;
     }
 
+    // إذا نجح التحقق تظهر رسالة النجاح
     if (valid) {
       document.getElementById('successMsg').style.display = 'block';
       form.reset();
-      setTimeout(function () {
-        document.getElementById('successMsg').style.display = 'none';
-      }, 5000);
     }
-  });
+  };
 }
 
-// --- Team Names Random Shuffle (JS requirement) ---
+// 3- لخبطة أسماء الطلاب عشوائياً عند تحديث الصفحة
 function shuffleTeam() {
-  const list = document.getElementById('teamList');
+  var list = document.getElementById('teamList');
   if (!list) return;
-
-  const items = Array.from(list.children);
-
-  // Fisher-Yates shuffle
-  for (let i = items.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    list.appendChild(items[j]);
-    items.splice(j, 1);
-    items.splice(i, 0, list.children[i]);
+  var items = list.getElementsByTagName('li');
+  // طريقة نقل عشوائي بسيطة يفهمها أي طالب مبتدئ
+  for (var i = 0; i < items.length; i++) {
+    var randomIndex = Math.floor(Math.random() * items.length);
+    list.appendChild(items[randomIndex]);
   }
 }
 
-// Run on page load
+// تشغيل الدوال عند تحميل الصفحة
 window.onload = function () {
   initNav();
   initContactForm();
-  shuffleTeam();
+  shuffleTeam(); 
 };

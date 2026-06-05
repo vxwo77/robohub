@@ -1,262 +1,127 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sensors & Actuators - RoboHub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sensors - RoboHub</title>
 
-  <!-- EXTERNAL CSS -->
-  <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css">
 
-  <!-- INTERNAL CSS -->
-  <style>
-    .sensor-category {
-      margin-bottom: 55px;
-    }
+<style>
+.sensor-box{
+    border:1px solid #ccc;
+    padding:15px;
+    margin-bottom:15px;
+}
+</style>
 
-    .sensor-category h2 {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      color: var(--secondary);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin-bottom: 5px;
-    }
-
-    .category-line {
-      width: 40px;
-      height: 2px;
-      background-color: var(--secondary);
-      margin-bottom: 25px;
-    }
-
-    .sensor-list-card {
-      background-color: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 25px 30px;
-      margin-bottom: 15px;
-      display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
-      align-items: center;
-      gap: 20px;
-      transition: all 0.3s;
-    }
-
-    .sensor-list-card:hover {
-      border-color: var(--primary);
-    }
-
-    .sensor-name {
-      font-family: var(--font-heading);
-      font-size: 0.9rem;
-      color: var(--primary);
-      letter-spacing: 1px;
-    }
-
-    .sensor-desc {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-    }
-
-    .sensor-badges {
-      display: flex;
-      gap: 6px;
-      justify-content: flex-end;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 600px) {
-      .sensor-list-card {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .sensor-badges {
-        justify-content: flex-start;
-      }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="nav-container">
-      <div class="nav-logo">Robo<span>Hub</span></div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="hardware.html">Hardware DB</a></li>
-        <li><a href="sensors.html" class="active">Sensors</a></li>
-        <li><a href="tutorials.html">Tutorials</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="team.html">Team</a></li>
-      </ul>
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </nav>
+<nav>
+  <div class="nav-container">
+    <div id="main-logo" class="nav-logo">RoboHub</div>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <h1>Sensors & <span style="color: var(--secondary);">Actuators</span></h1>
-    <p>A full reference guide for common sensors and output modules</p>
-  </div>
-
-  <!-- MAIN CONTENT -->
-  <div class="section">
-
-    <!-- SENSORS CATEGORY -->
-    <div class="sensor-category">
-      <h2>🔍 Distance & Proximity Sensors</h2>
-      <div class="category-line"></div>
-
-      <div class="sensor-list-card">
-        <div class="sensor-name">HC-SR04</div>
-        <div class="sensor-desc">Ultrasonic distance sensor. Measures 2cm–400cm using sound waves. Easy to use with Arduino.</div>
-        <div class="sensor-badges">
-          <span class="badge badge-green">Beginner</span>
-          <span class="badge badge-blue">5V</span>
-        </div>
-      </div>
-
-      <div class="sensor-list-card">
-        <div class="sensor-name">VL53L0X</div>
-        <div class="sensor-desc">Laser-based ToF sensor. Very accurate, communicates via I2C. Great for robotics.</div>
-        <div class="sensor-badges">
-          <span class="badge badge-blue">Intermediate</span>
-          <span class="badge badge-blue">3.3V</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- TEMPERATURE SENSORS -->
-    <div class="sensor-category">
-      <h2>🌡️ Temperature & Humidity Sensors</h2>
-      <div class="category-line"></div>
-
-      <div class="sensor-list-card">
-        <div class="sensor-name">DHT22</div>
-        <div class="sensor-desc">Reads temperature and humidity digitally. More accurate than DHT11. Ideal for weather stations.</div>
-        <div class="sensor-badges">
-          <span class="badge badge-green">Beginner</span>
-          <span class="badge badge-blue">3.3–5V</span>
-        </div>
-      </div>
-
-      <div class="sensor-list-card">
-        <div class="sensor-name">DS18B20</div>
-        <div class="sensor-desc">Waterproof temperature sensor using OneWire protocol. Used in water temperature monitoring.</div>
-        <div class="sensor-badges">
-          <span class="badge badge-blue">Intermediate</span>
-          <span class="badge badge-blue">3.3–5V</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- MOTION SENSORS -->
-    <div class="sensor-category">
-      <h2>📡 Motion & Accelerometer Sensors</h2>
-      <div class="category-line"></div>
-
-      <div class="sensor-list-card">
-        <div class="sensor-name">PIR HC-SR501</div>
-        <div class="sensor-desc">Passive infrared sensor. Detects motion from warm bodies. Used in alarm systems.</div>
-        <div class="sensor-badges">
-          <span class="badge badge-green">Beginner</span>
-          <span class="badge badge-blue">5V</span>
-        </div>
-      </div>
-
-      <div class="sensor-list-card">
-        <div class="sensor-name">ADXL345</div>
-        <div class="sensor-desc">3-axis accelerometer. Detects tilt and vibration. Communicates via I2C or SPI.</div>
-        <div class="sensor-badges">
-          <span class="badge badge-blue">Intermediate</span>
-          <span class="badge badge-blue">3.3V</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- ACTUATORS TABLE -->
-    <h2 class="section-title">Common <span>Actuators</span></h2>
-    <div class="section-line"></div>
-
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Actuator</th>
-            <th>Type</th>
-            <th>Voltage</th>
-            <th>Used For</th>
-            <th>Level</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>SG90 Servo</td>
-            <td>Servo Motor</td>
-            <td>5V</td>
-            <td>Angle control (0°–180°)</td>
-            <td><span class="badge badge-green">Beginner</span></td>
-          </tr>
-          <tr>
-            <td>DC Motor + L298N</td>
-            <td>Motor + Driver</td>
-            <td>5–12V</td>
-            <td>Wheels, fans, pumps</td>
-            <td><span class="badge badge-blue">Intermediate</span></td>
-          </tr>
-          <tr>
-            <td>Stepper Motor 28BYJ-48</td>
-            <td>Stepper Motor</td>
-            <td>5V</td>
-            <td>Precise position control</td>
-            <td><span class="badge badge-blue">Intermediate</span></td>
-          </tr>
-          <tr>
-            <td>Relay Module</td>
-            <td>Switch</td>
-            <td>5V (control)</td>
-            <td>Switching AC/DC devices</td>
-            <td><span class="badge badge-green">Beginner</span></td>
-          </tr>
-          <tr>
-            <td>Buzzer</td>
-            <td>Sound Output</td>
-            <td>3.3–5V</td>
-            <td>Alerts and alarms</td>
-            <td><span class="badge badge-green">Beginner</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- Tips list -->
-    <h2 class="section-title" style="margin-top: 50px;">Wiring <span>Tips</span></h2>
-    <div class="section-line"></div>
-    <ul class="feature-list">
-      <li>Always check your sensor's operating voltage before connecting (3.3V vs 5V)</li>
-      <li>Use a level shifter when connecting 5V sensors to a 3.3V board like ESP32</li>
-      <li>Capacitors near power pins help reduce signal noise in analog sensors</li>
-      <li>Pull-up resistors are often needed for I2C communication lines</li>
-      <li>Use short, shielded wires for sensitive analog sensors to reduce interference</li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="sensors.html">Sensors</a></li>
+      <li><a href="tutorials.html">Tutorials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="team.html">Team</a></li>
     </ul>
 
-    <!-- INLINE CSS example -->
-    <div class="info-box" style="margin-top: 30px; border-left-color: var(--secondary);">
-      <p>⚠️ <strong style="color: var(--secondary);">Important:</strong> Connecting a 5V sensor directly to an ESP32 GPIO pin can permanently damage the board. Always verify voltage compatibility first.</p>
+    <div class="hamburger" id="hamburger" style="display: none; cursor: pointer; flex-direction: column; gap: 4px;">
+      <span style="display: block; width: 25px; height: 3px; background-color: white;"></span>
+      <span style="display: block; width: 25px; height: 3px; background-color: white;"></span>
+      <span style="display: block; width: 25px; height: 3px; background-color: white;"></span>
     </div>
-
   </div>
+</nav>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2024 <span>RoboHub</span> — Robotics & IoT Consulting Platform</p>
-  </footer>
+<div class="section">
 
-  <script src="main.js"></script>
+<h1>Sensors Information</h1>
+
+<p>
+This page contains information about common sensors used in robotics.
+</p>
+
+<div class="sensor-box">
+<h3>HC-SR04</h3>
+<p>Distance sensor used to measure objects.</p>
+</div>
+
+<div class="sensor-box">
+<h3>DHT22</h3>
+<p>Measures temperature and humidity.</p>
+</div>
+
+<div class="sensor-box">
+<h3>PIR Sensor</h3>
+<p>Used to detect motion.</p>
+</div>
+
+<div class="sensor-box">
+<h3>ADXL345</h3>
+<p>Accelerometer used to detect movement and tilt.</p>
+</div>
+
+<h2>Actuators Table</h2>
+
+<table>
+<tr>
+<th>Actuator</th>
+<th>Voltage</th>
+<th>Use</th>
+</tr>
+
+<tr>
+<td>Servo Motor</td>
+<td>5V</td>
+<td>Angle Control</td>
+</tr>
+
+<tr>
+<td>DC Motor</td>
+<td>5V-12V</td>
+<td>Movement</td>
+</tr>
+
+<tr>
+<td>Relay Module</td>
+<td>5V</td>
+<td>Switching Devices</td>
+</tr>
+
+<tr>
+<td>Buzzer</td>
+<td>5V</td>
+<td>Sound Alerts</td>
+</tr>
+</table>
+
+<h2>Tips</h2>
+
+<ul>
+<li>Check voltage before connecting sensors.</li>
+<li>Read sensor datasheets.</li>
+<li>Use correct wiring.</li>
+<li>Test sensors before using them in projects.</li>
+</ul>
+
+<div style="margin-top:20px;">
+Always make sure the sensor voltage matches your board.
+</div>
+
+</div>
+
+<footer>
+<p>RoboHub - Web Design Project</p>
+</footer>
+
+<script src="main.js"></script>
+
 </body>
 </html>

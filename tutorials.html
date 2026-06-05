@@ -1,219 +1,105 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tutorials - RoboHub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutorials - RoboHub</title>
 
-  <!-- EXTERNAL CSS -->
-  <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css">
 
-  <!-- INTERNAL CSS -->
-  <style>
-    .tutorial-header-card {
-      background: linear-gradient(135deg, var(--card-bg) 0%, rgba(0, 212, 255, 0.05) 100%);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 30px;
-      margin-bottom: 40px;
-      display: flex;
-      gap: 30px;
-      align-items: center;
-    }
+<style>
+.video-section{
+    margin-bottom:25px;
+}
+</style>
 
-    .tutorial-header-icon {
-      font-size: 3rem;
-      flex-shrink: 0;
-    }
-
-    .tutorial-header-card h2 {
-      font-family: var(--font-heading);
-      font-size: 1rem;
-      color: var(--primary);
-      letter-spacing: 1px;
-      margin-bottom: 8px;
-    }
-
-    .tutorial-header-card p {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-    }
-
-    .level-tabs {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 35px;
-      flex-wrap: wrap;
-    }
-
-    .level-tab {
-      padding: 8px 22px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text-muted);
-      cursor: pointer;
-      font-family: var(--font-body);
-      font-size: 0.9rem;
-      font-weight: 600;
-      transition: all 0.3s;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .level-tab.beginner-active,
-    .level-tab:hover {
-      background-color: var(--success);
-      color: var(--dark);
-      border-color: var(--success);
-    }
-
-    @media (max-width: 600px) {
-      .tutorial-header-card {
-        flex-direction: column;
-        gap: 15px;
-      }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="nav-container">
-      <div class="nav-logo">Robo<span>Hub</span></div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="hardware.html">Hardware DB</a></li>
-        <li><a href="sensors.html">Sensors</a></li>
-        <li><a href="tutorials.html" class="active">Tutorials</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="team.html">Team</a></li>
-      </ul>
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </nav>
+<nav>
+  <div class="nav-container">
+    <div id="main-logo" class="nav-logo">RoboHub</div>
 
-  <!-- PAGE HEADER -->
-  <div class="page-header">
-    <h1>Video <span style="color: var(--secondary);">Tutorials</span></h1>
-    <p>Step-by-step guides to help you build your robotics projects</p>
-  </div>
-
-  <!-- MAIN CONTENT -->
-  <div class="section">
-
-    <!-- Into Card -->
-    <div class="tutorial-header-card">
-      <div class="tutorial-header-icon">🎬</div>
-      <div>
-        <h2>Learn by Watching</h2>
-        <p>All tutorials are beginner-friendly and walk you through the wiring, code, and testing step by step. Watch the videos below and follow along with your own components.</p>
-      </div>
-    </div>
-
-    <!-- Level Tabs -->
-    <div class="level-tabs">
-      <button class="level-tab beginner-active">All</button>
-      <button class="level-tab">Beginner</button>
-      <button class="level-tab">Intermediate</button>
-      <button class="level-tab">Advanced</button>
-    </div>
-
-    <!-- VIDEO GRID -->
-    <div class="video-grid">
-
-      <!-- Video 1 -->
-      <div class="video-card">
-        <iframe width="100%" height="220"
-           src="https://www.youtube.com/embed/JnJIKX5J0Cc?si=M290ruB2pftq7Ba1"
-           frameborder="0" allowfullscreen>
-              </iframe>
-        <div class="video-info">
-          <h3>Getting Started with Arduino Uno</h3>
-          <p>Learn how to set up the Arduino IDE, connect your board, and upload your first blink sketch.</p>
-          <div style="margin-top: 12px; display: flex; gap: 8px;">
-            <span class="badge badge-green">Beginner</span>
-            <span class="badge badge-blue">15 min</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Video 2 -->
-      <div class="video-card">
-        <iframe width="100%" height="220"
-  src="https://www.youtube.com/embed/n-gJ00GTsNg?si=kL26Vhq9PCrPwk1c"
-  frameborder="0" allowfullscreen>
-</iframe>
-        <div class="video-info">
-          <h3>HC-SR04 Ultrasonic Sensor Wiring</h3>
-          <p>Wire up a distance sensor to your Arduino and display readings in the serial monitor.</p>
-          <div style="margin-top: 12px; display: flex; gap: 8px;">
-            <span class="badge badge-green">Beginner</span>
-            <span class="badge badge-blue">10 min</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Video 3 -->
-      <div class="video-card">
-        <iframe width="100%" height="220"
-  src="https://www.youtube.com/embed/aH3sLEQI4_w?si=Wb5xi6IvFXFLTlxk"
-  frameborder="0" allowfullscreen>
-</iframe>
-        <div class="video-info">
-          <h3>ESP32 WiFi Connection Tutorial</h3>
-          <p>Connect your ESP32 to a WiFi network and send sensor data to a web server.</p>
-          <div style="margin-top: 12px; display: flex; gap: 8px;">
-            <span class="badge badge-blue">Intermediate</span>
-            <span class="badge badge-blue">20 min</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Video 4 -->
-      <div class="video-card">
-        <iframe width="100%" height="220"
-  src="https://www.youtube.com/embed/5bEHd8h_p-k?si=LwBwM0vjA393WdEo"
-  frameborder="0" allowfullscreen>
-</iframe>
-        <div class="video-info">
-          <h3>SG90 Servo Motor Control</h3>
-          <p>Control a servo motor angle using PWM signals from your Arduino or ESP32.</p>
-          <div style="margin-top: 12px; display: flex; gap: 8px;">
-            <span class="badge badge-green">Beginner</span>
-            <span class="badge badge-blue">12 min</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- What You'll Need list -->
-    <h2 class="section-title" style="margin-top: 60px;">What You'll <span>Need</span></h2>
-    <div class="section-line"></div>
-    <ul class="feature-list">
-      <li>A computer with Arduino IDE installed (free from arduino.cc)</li>
-      <li>A USB cable compatible with your board</li>
-      <li>A breadboard and jumper wires for prototyping</li>
-      <li>The specific components mentioned in each tutorial</li>
-      <li>A stable internet connection to download libraries</li>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="sensors.html">Sensors</a></li>
+      <li><a href="tutorials.html">Tutorials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="team.html">Team</a></li>
     </ul>
 
-    <!-- CTA -->
-    <div class="info-box" style="margin-top: 30px;">
-      <p>💬 Stuck on a tutorial? <a href="contact.html">Send us a message</a> with your question and we'll help you troubleshoot your project.</p>
+    <div class="hamburger" id="hamburger" style="display: none; cursor: pointer; flex-direction: column; gap: 4px;">
+      <span style="display: block; width: 25px; height: 3px; background-color: white;"></span>
+      <span style="display: block; width: 25px; height: 3px; background-color: white;"></span>
+      <span style="display: block; width: 25px; height: 3px; background-color: white;"></span>
     </div>
-
   </div>
+</nav>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2024 <span>RoboHub</span> — Robotics & IoT Consulting Platform</p>
-  </footer>
+<div class="section">
 
-  <script src="main.js"></script>
+<h1>Tutorial Videos</h1>
+
+<p>
+The following videos can help beginners learn robotics and Arduino.
+</p>
+
+<div class="video-section">
+
+<h3>Arduino Tutorial</h3>
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/JnJIKX5J0Cc"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="video-section">
+
+<h3>Ultrasonic Sensor Tutorial</h3>
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/n-gJ00GTsNg"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<div class="video-section">
+
+<h3>ESP32 Tutorial</h3>
+
+<iframe width="560" height="315"
+src="https://www.youtube.com/embed/aH3sLEQI4_w"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<h2>Requirements</h2>
+
+<ul>
+<li>Computer</li>
+<li>Arduino IDE</li>
+<li>USB Cable</li>
+<li>Breadboard</li>
+<li>Jumper Wires</li>
+</ul>
+
+<div style="margin-top:20px;">
+If you have questions, please visit the Contact page.
+</div>
+
+</div>
+
+<footer>
+<p>RoboHub - Web Design Project</p>
+</footer>
+
+<script src="main.js"></script>
+
 </body>
 </html>

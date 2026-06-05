@@ -1,223 +1,188 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>RoboHub - Robotics & IoT Consulting</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RoboHub</title>
 
-  <!-- EXTERNAL CSS -->
-  <link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="style.css">
 
-  <!-- INTERNAL CSS -->
-  <style>
-    .services-section {
-      background-color: var(--dark2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 60px 20px;
-    }
+<style>
+.services-section{
+    padding:20px;
+}
 
-    .services-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+.hero-buttons{
+    margin-top:15px;
+}
 
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
+.why-grid{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+}
 
-    .why-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 40px;
-      align-items: start;
-    }
+.why-image{
+    flex:1;
+}
 
-    .why-image img {
-      width: 100%;
-      border-radius: var(--radius);
-      border: 1px solid var(--border);
-    }
+.why-text{
+    flex:1;
+}
+</style>
 
-    @media (max-width: 768px) {
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav>
-    <div class="nav-container">
-      <div class="nav-logo">Robo<span>Hub</span></div>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="hardware.html">Hardware DB</a></li>
-        <li><a href="sensors.html">Sensors</a></li>
-        <li><a href="tutorials.html">Tutorials</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="team.html">Team</a></li>
-      </ul>
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
-      </div>
-    </div>
-  </nav>
+<nav>
+  <div class="nav-container">
+    <div id="main-logo" class="nav-logo">RoboHub</div>
 
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Your <span>Robotics</span> Consulting Hub</h1>
-    <p>Get expert guidance on building your robotics and IoT projects. From choosing the right microcontroller to wiring your sensors — we help students and hobbyists build smarter.</p>
-    <div class="hero-buttons">
-      <a href="contact.html" class="btn btn-primary">Request Consultation</a>
-      <a href="hardware.html" class="btn btn-outline">Browse Hardware</a>
-    </div>
-  </section>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="hardware.html">Hardware</a></li>
+      <li><a href="sensors.html">Sensors</a></li>
+      <li><a href="tutorials.html">Tutorials</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="team.html">Team</a></li>
+    </ul>
 
-  <!-- STATS BAR -->
-  <div class="section" style="padding-bottom: 0;">
-    <div class="stats-bar">
-      <div class="stat-item">
-        <div class="stat-number">20+</div>
-        <div class="stat-label">Components</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">10+</div>
-        <div class="stat-label">Tutorials</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">3</div>
-        <div class="stat-label">Platforms</div>
-      </div>
-      <div class="stat-item">
-        <div class="stat-number">Free</div>
-        <div class="stat-label">Consulting</div>
-      </div>
+    <div class="hamburger" id="hamburger" style="display: none; cursor: pointer; flex-direction: column; gap: 4px;">
+      <span style="display: block; width: 25px; height: 3px; background-color: white;"></span>
+      <span style="display: block; width: 25px; height: 3px; background-color: white;"></span>
+      <span style="display: block; width: 25px; height: 3px; background-color: white;"></span>
     </div>
   </div>
+</nav>
 
-  <!-- SERVICES -->
-  <section class="services-section">
-    <div class="services-inner">
-      <h2 class="section-title">Our <span>Services</span></h2>
-      <div class="section-line"></div>
-      <div class="cards-grid">
-        <div class="card">
-          <div class="card-icon">🤖</div>
-          <h3>Project Guidance</h3>
-          <p>We help you choose the right components and plan your project from scratch.</p>
-          <span class="card-tag">Free</span>
-        </div>
-        <div class="card">
-          <div class="card-icon">📦</div>
-          <h3>Hardware Encyclopedia</h3>
-          <p>Browse our database of microcontrollers, sensors, and actuators with full specs.</p>
-          <span class="card-tag">Reference</span>
-        </div>
-        <div class="card">
-          <div class="card-icon">🎓</div>
-          <h3>Video Tutorials</h3>
-          <p>Step-by-step video guides for wiring, programming, and testing your components.</p>
-          <span class="card-tag">Learning</span>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="hero">
 
-  <!-- WHY US -->
-  <div class="section">
-    <h2 class="section-title">Why <span>RoboHub?</span></h2>
-    <div class="section-line"></div>
-    <div class="why-grid">
-      <div>
-        <ul class="feature-list">
-          <li>Beginner-friendly explanations for every component</li>
-          <li>Real project examples using Arduino, ESP32, and Raspberry Pi</li>
-          <li>Free consultation for students and hobbyists</li>
-          <li>Regularly updated hardware database</li>
-          <li>Video tutorials with hands-on demonstrations</li>
-          <li>Community-focused approach to learning robotics</li>
-        </ul>
-        <!-- INLINE CSS example -->
-        <p style="margin-top: 25px; color: var(--text-muted); font-size: 0.92rem;">
-          Built by students, for students. Our goal is to make robotics accessible to everyone.
-        </p>
-      </div>
-      <div class="why-image">
-        <img
-          src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
-          alt="Electronics and robotics components"
-        />
-      </div>
-    </div>
-  </div>
+<h1>Welcome to RoboHub</h1>
 
-  <!-- POPULAR COMPONENTS TABLE -->
-  <div class="section" style="padding-top: 0;">
-    <h2 class="section-title">Popular <span>Components</span></h2>
-    <div class="section-line"></div>
-    <div class="table-container">
-      <table>
-        <thead>
-          <tr>
-            <th>Component</th>
-            <th>Type</th>
-            <th>Voltage</th>
-            <th>Best For</th>
-            <th>Level</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Arduino Uno</td>
-            <td>Microcontroller</td>
-            <td>5V</td>
-            <td>Beginner projects</td>
-            <td><span class="badge badge-green">Beginner</span></td>
-          </tr>
-          <tr>
-            <td>ESP32</td>
-            <td>Microcontroller</td>
-            <td>3.3V</td>
-            <td>WiFi / Bluetooth IoT</td>
-            <td><span class="badge badge-blue">Intermediate</span></td>
-          </tr>
-          <tr>
-            <td>HC-SR04</td>
-            <td>Distance Sensor</td>
-            <td>5V</td>
-            <td>Obstacle detection</td>
-            <td><span class="badge badge-green">Beginner</span></td>
-          </tr>
-          <tr>
-            <td>Raspberry Pi 4</td>
-            <td>Single Board PC</td>
-            <td>5V</td>
-            <td>Complex AI projects</td>
-            <td><span class="badge badge-orange">Advanced</span></td>
-          </tr>
-          <tr>
-            <td>L298N Motor Driver</td>
-            <td>Motor Controller</td>
-            <td>5–35V</td>
-            <td>DC motor control</td>
-            <td><span class="badge badge-blue">Intermediate</span></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+<p>
+This website provides information about robotics,
+microcontrollers and sensors.
+The project was created for the Web Design course.
+</p>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>&copy; 2024 <span>RoboHub</span> — Robotics & IoT Consulting Platform</p>
-  </footer>
+<div class="hero-buttons">
+<a href="hardware.html" class="btn">Hardware</a>
+<a href="contact.html" class="btn">Contact Us</a>
+</div>
 
-  <script src="main.js"></script>
+</section>
+
+<section class="services-section">
+
+<h2>Website Sections</h2>
+
+<div class="cards-grid">
+
+<div class="card">
+<h3>Hardware</h3>
+<p>
+Information about Arduino, ESP32 and Raspberry Pi.
+</p>
+</div>
+
+<div class="card">
+<h3>Sensors</h3>
+<p>
+Information about sensors used in robotics projects.
+</p>
+</div>
+
+<div class="card">
+<h3>Tutorials</h3>
+<p>
+Simple tutorials and videos for beginners.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<div class="section">
+
+<h2>About This Website</h2>
+
+<div class="why-grid">
+
+<div class="why-text">
+
+<ul class="feature-list">
+<li>Information about robotics components</li>
+<li>Simple tutorials for beginners</li>
+<li>Examples of sensors and controllers</li>
+<li>Useful learning resources</li>
+<li>Course project for CIT230</li>
+</ul>
+
+<p style="color:gray;">
+This website was created as a university project.
+</p>
+
+</div>
+
+<div class="why-image">
+
+<img
+src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80"
+alt="robotics image">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="section">
+
+<h2>Popular Components</h2>
+
+<table>
+
+<tr>
+<th>Component</th>
+<th>Type</th>
+<th>Voltage</th>
+</tr>
+
+<tr>
+<td>Arduino Uno</td>
+<td>Microcontroller</td>
+<td>5V</td>
+</tr>
+
+<tr>
+<td>ESP32</td>
+<td>Microcontroller</td>
+<td>3.3V</td>
+</tr>
+
+<tr>
+<td>HC-SR04</td>
+<td>Sensor</td>
+<td>5V</td>
+</tr>
+
+<tr>
+<td>Raspberry Pi</td>
+<td>Computer Board</td>
+<td>5V</td>
+</tr>
+
+</table>
+
+</div>
+
+<footer>
+<p>RoboHub - Web Design Project</p>
+</footer>
+
+<script src="main.js"></script>
+
 </body>
 </html>
